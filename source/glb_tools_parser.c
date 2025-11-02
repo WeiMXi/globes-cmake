@@ -30,7 +30,7 @@
 #include <errno.h>
 #include <math.h>
 #include "globes/globes.h"
-
+#include <ctype.h>
 
 void parse_definition(const char *in)
 {

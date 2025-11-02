@@ -70,7 +70,7 @@ void glb_set_bg_rule(int i, int cn, int *rule, double *coeff);
 
 
 void glb_set_rates();
-void glb_set_new_rates();
+void glb_set_new_rates(int fast);
 void glb_rate_template();
 void glb_set_signal_errors(int i,double norm, double tilt);
 void glb_set_bg_errors(int i,double norm, double tilt);

@@ -2150,7 +2150,7 @@ void glbSetNewRates()
   for (i=0;i<glb_num_of_exps;i++)
     {
       glbSetExperiment(glb_experiment_list[i]);
-      glb_set_new_rates();
+      glb_set_new_rates(GLB_SLOW_RATES);
     }
 }
 
