@@ -79,6 +79,7 @@ glb_osc_engine *glbFindOscEngineByName(const char *name);
 
 int glb_switch_osc_engine(glb_osc_engine *p);
 
+int zheevh3(double complex A[3][3], double complex Q[3][3], double w[3]);
 
 #endif /* GLB_OSZPROB_H */
 
