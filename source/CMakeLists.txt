@@ -8,6 +8,8 @@ find_program(LEX_EXECUTABLE
     DOC "Lex compatible scanner generator"
 )
 
+find_library(MATH_LIBRARY m)
+
 if(NOT YACC_EXECUTABLE)
     message(FATAL_ERROR "yacc/bison not found! Please install yacc or bison.")
 endif()
@@ -73,11 +75,11 @@ add_library(globeslib SHARED
 target_include_directories(globeslib PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}>
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
-    $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}>
+    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}>
     $<INSTALL_INTERFACE:include>
 )
 
-target_link_libraries(globeslib PUBLIC gnu ${GSL_LIBRARIES})
+target_link_libraries(globeslib PUBLIC gnu ${GSL_LIBRARIES} ${MATH_LIBRARY})
 target_compile_definitions(globeslib PRIVATE 
     GLB_MODULE_DIR="${CMAKE_INSTALL_PREFIX}/lib/globes"
 )
