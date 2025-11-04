@@ -43,7 +43,7 @@ char MYFILE2[]="test6b.dat";
 
 
 /* Square of real number */
-inline double square(double x)
+double square(double x)
 {
     return x*x;
 }

@@ -78,7 +78,7 @@ double sigma_binbin = 0.0;        /* Bin-to-bin error */
  ***************************************************************************/
 
 /* Minimum of two numbers */
-inline double min(double x, double y)
+double min(double x, double y)
 {
   if (x < y)
     return x;
@@ -87,14 +87,14 @@ inline double min(double x, double y)
 }
 
 /* Square of real number */
-inline double square(double x)
+double square(double x)
 {
   return x*x;
 }
 
 /* Gauss likelihood (this is sufficient here due to the large event numbers
  * in a reactor experiment; for other setups, one should use Poisson statistics) */
-inline double likelihood(double true_rate, double fit_rate, double sqr_sigma)
+double likelihood(double true_rate, double fit_rate, double sqr_sigma)
 {
   if (sqr_sigma > 0)
     return square(true_rate - fit_rate) / sqr_sigma;

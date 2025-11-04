@@ -30,6 +30,7 @@
 #include "glb_multiex.h"
 #include "glb_rate_engine.h"
 #include "glb_minimize.h"
+#include "glb_sys.h"
 
 
 /* Global variables */
@@ -726,7 +727,7 @@ int glbSetSysStartingValuesListInRule(int exp, int rule, int on_off, const doubl
  * Calculate the Poisson likelihood for a specific true and fitted event   *
  * rate.                                                                   *
  ***************************************************************************/
-inline double glb_likelihood(double true_rate, double fit_rate)
+double glb_likelihood(double true_rate, double fit_rate)
 {
   double res;
   res = fit_rate - true_rate;

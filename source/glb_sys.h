@@ -27,6 +27,7 @@
 #endif
 
 #include "glb_types.h"
+#include <math.h>
 
 extern glb_systematic *glb_sys_list;
 
@@ -48,5 +49,6 @@ int glbSetSignalStartingValuesInRule(int exp, int rule, double norm, double tilt
 int glbSetBGStartingValuesInRule(int exp, int rule, double norm, double tilt);
 int glbSetSysStartingValuesListInRule(int exp, int rule, int on_off, const double *sys_list);
 
+double glb_likelihood(double true_rate, double fit_rate);
 
 #endif /* GLB_SYS_H */
