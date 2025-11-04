@@ -25,8 +25,8 @@
 
 #include <stdio.h>
 #include <globes/globes.h>
-#include "source/glb_wrapper.h"
-#include "source/glb_error.h"
+#include "glb_wrapper.h"
+#include "glb_error.h"
 #include "glb_prior.h"
 #include "glb_probability.h"
 #include "glb_rate_engine.h"
