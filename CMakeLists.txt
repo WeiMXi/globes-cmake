@@ -40,20 +40,20 @@ add_definitions(-DHAVE_CONFIG_H=1)
 
 # generate config.h
 configure_file(
-    ${CMAKE_SOURCE_DIR}/config.h.cmake
-    ${CMAKE_BINARY_DIR}/config.h
+    ${CMAKE_CURRENT_SOURCE_DIR}/config.h.cmake
+    ${CMAKE_CURRENT_BINARY_DIR}/config.h
     @ONLY
 )
 
 include_directories(
-    ${CMAKE_BINARY_DIR} # for config.h
+    ${CMAKE_CURRENT_BINARY_DIR} # for config.h
     ${GSL_INCLUDE_DIRS}
 )
 
 # install config script
 configure_file(
-    ${CMAKE_SOURCE_DIR}/globes-config.in
-    ${CMAKE_BINARY_DIR}/globes-config
+    ${CMAKE_CURRENT_SOURCE_DIR}/globes-config.in
+    ${CMAKE_CURRENT_BINARY_DIR}/globes-config
     @ONLY
 )
 
@@ -63,11 +63,11 @@ add_subdirectory(data)
 add_subdirectory(doc)
 add_subdirectory(examples)
 
-if(EXISTS ${CMAKE_SOURCE_DIR}/globes/CMakeLists.txt)
+if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/globes/CMakeLists.txt)
     add_subdirectory(globes)
 endif()
 
-install(PROGRAMS ${CMAKE_BINARY_DIR}/globes-config DESTINATION bin)
+install(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/globes-config DESTINATION bin)
 
 # install m4 files
 install(FILES globes.m4 DESTINATION share/aclocal)
