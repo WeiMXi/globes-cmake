@@ -36,6 +36,8 @@ if(NOT GSL_FOUND)
     endif()
 endif()
 
+add_definitions(-DHAVE_CONFIG_H=1)
+
 # generate config.h
 configure_file(
     ${CMAKE_SOURCE_DIR}/config.h.cmake
