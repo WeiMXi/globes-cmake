@@ -29,7 +29,7 @@
 #include <globes/globes.h>
 
 
-int glbInitExperiment(char *inf, glb_exp *ins, int *counter);
+int glbInitExperiment(const char *inf, glb_exp *ins, int *counter);
 void glb_clean_parser();
 void glbResetCounters();
 void glb_copy_buff();

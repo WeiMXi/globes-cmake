@@ -4034,7 +4034,7 @@ void glb_clean_parser()
 
 }
 
-int glbInitExperiment(char *inf,glb_exp *in, int *counter)
+int glbInitExperiment(const char *inf,glb_exp *in, int *counter)
 {
   FILE *input;
   int k,i;
