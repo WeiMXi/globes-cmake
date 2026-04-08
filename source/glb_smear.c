@@ -666,6 +666,11 @@ static double** SmearMatrixA(glb_smear *data, int **lowrange, int **uprange,
 
       low[i]=zero;
       up[i]=zero+nonzero-1;
+
+      if (out[i] == NULL) {
+          out[i] = (double*) glb_malloc(sizeof(double));
+      }
+      
       out[i][nonzero] = -1;   /* Signals end of list */
     }
   low[i] = -1;  /* Signals end of list */
@@ -1288,7 +1293,7 @@ main (void)
   testR->options=opt;
 
   glb_default_smear(testR);*/
-  /* That´s the call to our new routine */
+  /* Thatï¿½s the call to our new routine */
 
   matrix=SmearMatrixC(testR,&low,&up,&inl);
 
